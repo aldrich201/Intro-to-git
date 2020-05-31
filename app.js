@@ -19,15 +19,7 @@ var commentRoutes = require("./routes/comments"),
 
 //seedDB(); //seed database
 //app config
-// mongoose.connect("mongodb://localhost/yelp_camp_v10", {
-// 	useNewUrlParser: true, 
-// 	useUnifiedTopology: true, 
-// 	useFindAndModify: false
-// }).then(() => {
-// 	console.log("Connected to Database");
-// }).catch(err => {
-// 	console.log("ERROR:", err.message);
-mongoose.connect("mongodb+srv://aldrich201:Hongtienchai12@cluster0-mk411.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true, 
 	useFindAndModify: false
@@ -36,6 +28,19 @@ mongoose.connect("mongodb+srv://aldrich201:Hongtienchai12@cluster0-mk411.mongodb
 }).catch(err => {
 	console.log("ERROR:", err.message);
 });
+
+
+// mongoose.connect("mongodb+srv://aldrich201:Hongtienchai12@cluster0-mk411.mongodb.net/test?retryWrites=true&w=majority", {
+// 	useNewUrlParser: true, 
+// 	useUnifiedTopology: true, 
+// 	useFindAndModify: false
+// }).then(() => {
+// 	console.log("Connected to Database");
+// }).catch(err => {
+// 	console.log("ERROR:", err.message);
+// });
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"))
