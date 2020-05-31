@@ -68,7 +68,7 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 //UPDATE ROUTE
 router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 	//find and update correct campground
-	Campground.findOneAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
+	Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
 		if(err){
 			res.redirect("/campgrounds");
 		} else {
@@ -83,7 +83,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 
 //DESTROY
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
-	Campground.findbyIdAndDelete(req.params.id, function(err, campgroundRemoved){
+	Campground.findByIdAndDelete(req.params.id, function(err, campgroundRemoved){
 		if(err){
 			res.redirect("/campgrounds");
 		} Comment.deleteMany( {_id: { $in: campgroundRemoved.comments } }, (err) => {
