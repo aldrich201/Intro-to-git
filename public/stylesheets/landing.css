@@ -1,0 +1,77 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://scontent.fcbr2-1.fna.fbcdn.net/v/t31.0-8/s960x960/19787431_1684324354935274_1180066652919429530_o.jpg?_nc_cat=106&_nc_sid=13bebb&_nc_ohc=qIq5u26mrmoAX_yThdy&_nc_ht=scontent.fcbr2-1.fna&_nc_tp=7&oh=e2a48eb30f4c011e1128ad9b27e9787f&oe=5EF6BA1E) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/p720x720/65629279_2667070086660691_6105738921176465408_o.jpg?_nc_cat=100&_nc_sid=0be424&_nc_ohc=JLV8QVzMzQoAX_0D6XI&_nc_ht=scontent.fcbr2-1.fna&_nc_tp=6&oh=15d96ab736375817e2df9d25865e8b98&oe=5EF61620);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/36483892_2091638214203884_815952728638357504_n.jpg?_nc_cat=111&_nc_sid=0be424&_nc_ohc=QTXUza1XKnAAX8dWoHB&_nc_ht=scontent.fcbr2-1.fna&oh=dd1669b71923980c963c7b5e7a8f32a2&oe=5EF81B1E);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/36580713_2091674784200227_9010359934059020288_n.jpg?_nc_cat=107&_nc_sid=13bebb&_nc_ohc=ko7H_w5xNtwAX96TvFp&_nc_ht=scontent.fcbr2-1.fna&oh=64f89b7aad52d08c3a35dbb7146c3b04&oe=5EF77240);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/76638451_2911040622263635_6654546071278059520_o.jpg?_nc_cat=110&_nc_sid=0be424&_nc_ohc=t5WI_SirsHgAX-g-i6K&_nc_ht=scontent.fcbr2-1.fna&oh=72760676a4ec70a072cbcde91f974b53&oe=5EF5ECCD);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
